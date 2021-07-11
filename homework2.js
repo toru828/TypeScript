@@ -32,6 +32,8 @@ class arrayForShapes {
 }
 let Square1 = new Square("Square1", 3);
 let Rectangle1 = new Rectangle("Rectangle1", 5, 6);
+let Square2 = new Square("Square2", 8);
+let Rectangle2 = new Rectangle("Rectangle2", 10, 15);
 let listForShape = new arrayForShapes();
 listForShape.pushToArray(Square1);
 listForShape.pushToArray(Rectangle1);
