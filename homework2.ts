@@ -29,7 +29,7 @@ class Rectangle implements AreaInterface {
         this.height = height;
     }
 
-    makeElement() {
+    makeElement(): string {
         let area: number;
         area = this.width * this.height;
         return "The area of " + this.name + " is " + area;
