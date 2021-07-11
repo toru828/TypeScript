@@ -54,5 +54,7 @@ let listForShape = new arrayForShapes();
 
 listForShape.pushToArray(Square1);
 listForShape.pushToArray(Rectangle1);
+listForShape.pushToArray(Square2);
+listForShape.pushToArray(Rectangle2);
 
 console.log(listForShape.list);
