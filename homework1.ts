@@ -1,9 +1,6 @@
-function countStringType(array: any) {
+function countStringType(array: string[] | number[]) {
     let totalNumber: number = 0;
     for (var i = 0; i < array.length; i++) {
-        if (typeof array[i] !== 'string' && typeof array[i] !== 'number') {
-            return;
-        }
         if (typeof array[i] === 'string') {
             ++totalNumber;
         }
@@ -11,7 +8,7 @@ function countStringType(array: any) {
     console.log(totalNumber);
 }
 
-let a: any
-a = [1, "h", 2, "k" , "hello"];
+let arr: any
+arr = [1, "h", 2, "k" , "hello"];
 
-countStringType(a);
+countStringType(arr);
