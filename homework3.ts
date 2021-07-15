@@ -6,10 +6,11 @@ function required(message: string) {
         };
   
         const setter = function(nam: string) {
+            value = "";
             if (nam.length !== 0) {
                 value = nam;
             } else {
-                value = message;
+                console.log(message);
             }
         }; 
 
@@ -29,12 +30,17 @@ class Person {
     }
   
     show() {
-        console.log(this.name)
+        if (this.name) {
+            console.log(this.name)
+        }
     }
 }
-  
+
 const firstPerson = new Person("John");
 firstPerson.show();
 
 const secondPerson = new Person("");
 secondPerson.show();
+
+const thirdPerson = new Person("Nancy");
+thirdPerson.show();
