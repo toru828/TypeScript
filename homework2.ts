@@ -1,8 +1,9 @@
-interface AreaInterface {
-    makeElement() : any;
+interface ShapeInterface {
+    calculateArea() : number;
+    getName() : string;
 }
 
-class Square implements AreaInterface {
+class Square implements ShapeInterface {
     name: string;
     width: number;
   
@@ -11,14 +12,18 @@ class Square implements AreaInterface {
         this.width = width;
     }
   
-    makeElement() {
+    calculateArea() {
         let area: number;
         area = this.width * this.width;
-        return "The area of " + this.name + " is " + area;
+        return area;
+    }
+
+    getName() {
+        return this.name;
     }
 }
   
-class Rectangle implements AreaInterface {
+class Rectangle implements ShapeInterface {
     name: string;
     width: number;
     height: number;
@@ -29,23 +34,14 @@ class Rectangle implements AreaInterface {
         this.height = height;
     }
   
-    makeElement() {
+    calculateArea() {
         let area: number;
         area = this.width * this.height;
-        return "The area of " + this.name + " is " + area;
-    }
-}
-class arrayForShapesArea {
-    areaList: object[] = [];
-    
-    pushToArray1(shapeArray: any[]) {
-        for (let i: number = 0; i < shapeArray.length; i++) {
-            this.pushToArray2(shapeArray[i]);
-        }
+        return area;
     }
 
-    pushToArray2(areaInterfaceTypedVar : AreaInterface) {
-        this.areaList.push(areaInterfaceTypedVar.makeElement());
+    getName() {
+        return this.name;
     }
 }
 
@@ -55,10 +51,9 @@ const Rectangle1 = new Rectangle("Rectangle1", 5, 6);
 const Square2 = new Square("Square2", 8);
 const Rectangle2 = new Rectangle("Rectangle2", 10, 15);
 
-const objectList: object[] = [Square1, Rectangle1, Square2, Rectangle2];
+const objectList: ShapeInterface[] = [Square1, Rectangle1, Square2, Rectangle2];
 
-const listForShape = new arrayForShapesArea();
-
-listForShape.pushToArray1(objectList);
-
-console.log(listForShape.areaList);
+objectList.forEach(function(shape) {
+    const msg = `The area of ${shape.getName()} is ${shape.calculateArea()}`
+    console.log(msg);
+})
